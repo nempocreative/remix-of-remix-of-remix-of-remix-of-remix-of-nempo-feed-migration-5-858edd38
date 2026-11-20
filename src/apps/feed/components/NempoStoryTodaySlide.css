@@ -30,6 +30,25 @@
 /* Backdrop layers (bg photo, beams, glow, spot beams) that the clear export drops. */
 .nst-backdrop { pointer-events: none; }
 
+/* Soft replacement beams for the two lower gold spotlights — the frame image's baked beams
+   were hard-cut triangles, so they were erased from the webp and redrawn here with a gentle fade. */
+.nst-beams { position: absolute; inset: 0; z-index: 4; pointer-events: none; overflow: hidden; }
+.nst-beam {
+  position: absolute;
+  top: 110.5cqw;
+  width: 15cqw;
+  height: 52cqw;
+  margin-left: -7.5cqw;
+  transform-origin: 50% 0;
+  clip-path: polygon(44% 0, 56% 0, 100% 100%, 0 100%);
+  filter: blur(1.1cqw);
+  mix-blend-mode: screen;
+  opacity: .55;
+  background: linear-gradient(180deg, color-mix(in srgb, #ffe46b 80%, transparent) 0%, color-mix(in srgb, #ffe46b 30%, transparent) 40%, transparent 92%);
+}
+.nst-beam--l { left: 7.6cqw; transform: rotate(27deg); }
+.nst-beam--r { left: 92.4cqw; transform: rotate(-27deg); }
+
 /* Header: NEMPO.ID × Kala Muda on the left, Saduli + Good Story Cafe on the right. */
 .nst-header { z-index: 7; top: 5cqw; left: 6cqw; right: 6cqw; }
 .nst-header .kmt-logo { width: 9cqw; height: 9cqw; }

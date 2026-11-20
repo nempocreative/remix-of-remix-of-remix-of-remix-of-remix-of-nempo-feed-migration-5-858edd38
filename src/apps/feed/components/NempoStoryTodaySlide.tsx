@@ -3,7 +3,7 @@ import { MapPin } from 'lucide-react';
 import gscLogo from '@/assets/good-story-cafe-logo.jpg';
 import saduliLogo from '@/assets/saduli-ragap-entertainment-logo-keyed.png';
 import bgImage from '@/assets/nempo-feed-slide-50-bg.jpg';
-// Slide 52's ribbon-free truss frame with the lower yellow spot beams repainted to fade out softly.
+// Slide 52's ribbon-free truss frame; its hard-cut lower yellow beams were erased and redrawn as soft CSS beams (.nst-beam).
 import frameAsset from '@/assets/nempo-story/nempo-story-stage-frame.webp.asset.json';
 import { nempoStoryToday as P, NEMPO_STORY_CLEAR_BOX as CLEAR } from './nempo-story-today';
 import { STAGE_LAMPS, STAGE_SPOTS, stageLightStyle } from './nempo-stage-lights';
@@ -33,6 +33,10 @@ export function NempoStoryTodaySlide({ exportRef, clear = false }: { exportRef?:
           {STAGE_SPOTS.map((l, i) => (
             <span key={i} className={`nar-beam nar-beam--${l.tone}`} style={stageLightStyle(l)} />
           ))}
+        </span>
+        <span className="nst-beams" aria-hidden="true">
+          <span className="nst-beam nst-beam--l" />
+          <span className="nst-beam nst-beam--r" />
         </span>
         <img className="nar-frame" src={frameAsset.url} alt="" aria-hidden="true" width={1152} height={1536} draggable={false} />
         <span className="nar-lamps" aria-hidden="true">
