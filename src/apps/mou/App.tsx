@@ -1,8 +1,9 @@
 import { type ReactNode } from 'react';
-import { Printer } from 'lucide-react';
+import { Download, Printer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from '@tanstack/react-router';
 import mark from '@/assets/mou/nempo-mark.png.asset.json';
+import suratPdf from '@/assets/mou/surat-permohonan-art-center.pdf.asset.json';
 import { SuratArtCenterDocument } from '@/apps/mou/pages/surat-art-center';
 
 const totalPages = 4;
@@ -417,6 +418,20 @@ function AppHeader({ active }: { active: MouPageKey }) {
         </Link>
       </nav>
       <div className="top-actions">
+        {active === 'surat-art-center' ? (
+          <a
+            className="button primary"
+            href={suratPdf.url}
+            download="surat-permohonan-art-center.pdf"
+            target="_blank"
+            rel="noreferrer"
+            title="Unduh surat sebagai file PDF"
+            aria-label="Unduh surat sebagai file PDF"
+          >
+            <Download size={14} />
+            <span>Unduh PDF</span>
+          </a>
+        ) : null}
         <Button
           variant="unstyled"
           size="unstyled"
