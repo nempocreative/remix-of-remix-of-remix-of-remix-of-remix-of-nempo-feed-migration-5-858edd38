@@ -3519,6 +3519,19 @@ function App() {
           <button
             type="button"
             role="tab"
+            aria-selected={isNempoStory}
+            onClick={() => setActiveFeed('nempo-story')}
+            className={`shrink-0 rounded-full px-4 py-2 text-[11px] font-black transition-colors ${
+              isNempoStory
+                ? 'bg-[#ffdd00] text-[#062f4d]'
+                : 'text-white/75 hover:text-white'
+            }`}
+          >
+            Nempo Story
+          </button>
+          <button
+            type="button"
+            role="tab"
             aria-selected={isRundown}
             onClick={() => setActiveFeed('rundown')}
             className={`shrink-0 rounded-full px-4 py-2 text-[11px] font-black transition-colors ${
@@ -3560,19 +3573,6 @@ function App() {
           </button>
           <Button role="tab" aria-selected={isGgsMen} onClick={() => setActiveFeed('ggs-men')} className="ggs-men-tab" variant="ghost" size="sm">GGS Cowok</Button>
           <Button role="tab" aria-selected={isGarutBeans} onClick={() => setActiveFeed('garut-beans')} className="garut-beans-tab" variant="ghost" size="sm">Garut Beans</Button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={isNempoStory}
-            onClick={() => setActiveFeed('nempo-story')}
-            className={`shrink-0 rounded-full px-4 py-2 text-[11px] font-black transition-colors ${
-              isNempoStory
-                ? 'bg-[#ffdd00] text-[#062f4d]'
-                : 'text-white/75 hover:text-white'
-            }`}
-          >
-            Nempo Story
-          </button>
           <button
             type="button"
             role="tab"
