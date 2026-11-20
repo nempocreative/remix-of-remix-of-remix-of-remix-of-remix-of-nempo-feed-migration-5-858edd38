@@ -217,6 +217,9 @@ import { GgsPovScrubSlide } from './components/GgsPovScrubSlide';
 import { GarutBeansOpeningSlide } from './components/GarutBeansOpeningSlide';
 import { GARUT_BEANS_SLIDES, type GarutBeansSlide } from './components/garut-beans-feed';
 import garutBeansOpeningPng from '@/assets/garut-beans/garut-beans-01-filosofi-logo.png.asset.json';
+import { NempoStoryTodaySlide } from './components/NempoStoryTodaySlide';
+import nempoStoryTodayPng from '@/assets/nempo-story/nempo-story-01-today.png.asset.json';
+import nempoStoryTodayClearPng from '@/assets/nempo-story/nempo-story-01-today-clear.png.asset.json';
 import ggsPovScrubPng from '@/assets/ggs-feed-53-pov-playlist-owner.png.asset.json';
 import ggsPromoAkhirTahunPng from '@/assets/ggs-feed-60-promo-akhir-tahun.png.asset.json';
 import ggsTeaserSpesialPng from '@/assets/ggs-feed-61-something-spesial.png.asset.json';
@@ -3140,6 +3143,7 @@ function App() {
     | 'client'
     | 'ggs-men'
     | 'garut-beans'
+    | 'nempo-story'
     | 'story'
     | 'coupon'
     | 'qcard'
@@ -3181,6 +3185,7 @@ function App() {
   const isGgsStory = activeFeed === 'story';
   const isGgsMen = activeFeed === 'ggs-men';
   const isGarutBeans = activeFeed === 'garut-beans';
+  const isNempoStory = activeFeed === 'nempo-story';
   const isGgsGrandOpeningSlide =
     activeFeed === 'client' && activeClientSlide === 3;
   const isGgsRatusVideoSlide =
@@ -3465,7 +3470,7 @@ function App() {
   };
 
   const visibleSlides =
-    isPhotobooth || isMemberCard || isCalendar || isGgsMen || isGarutBeans
+    isPhotobooth || isMemberCard || isCalendar || isGgsMen || isGarutBeans || isNempoStory
       ? []
       : isGgsFeed
       ? isGgsStory
@@ -3558,6 +3563,19 @@ function App() {
           <button
             type="button"
             role="tab"
+            aria-selected={isNempoStory}
+            onClick={() => setActiveFeed('nempo-story')}
+            className={`shrink-0 rounded-full px-4 py-2 text-[11px] font-black transition-colors ${
+              isNempoStory
+                ? 'bg-[#ffdd00] text-[#062f4d]'
+                : 'text-white/75 hover:text-white'
+            }`}
+          >
+            Nempo Story
+          </button>
+          <button
+            type="button"
+            role="tab"
             aria-selected={isCalendar}
             onClick={() => setActiveFeed('calendar')}
             className={`shrink-0 rounded-full px-4 py-2 text-[11px] font-black transition-colors ${
@@ -3637,6 +3655,27 @@ function App() {
             Q Card MC
           </button>
         </div>
+        {isNempoStory && (
+          <div className="mb-3 flex flex-col items-center gap-2">
+            <PrebuiltPngDownload
+              key="nempo-story-01"
+              src={nempoStoryTodayPng.url}
+              fileName="Nempo-Story-01-Today-Good-Story-Cafe.png"
+              label="Download PNG · 3×"
+              className="inline-flex items-center gap-2 rounded-full bg-[#062f4d] px-4 py-2 text-[11px] font-black text-white shadow-[0_8px_20px_rgba(0,40,78,0.2)] transition-colors hover:bg-[#0b4d69] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffdd00] focus-visible:ring-offset-2"
+            />
+            <PrebuiltPngDownload
+              key="nempo-story-01-clear"
+              src={nempoStoryTodayClearPng.url}
+              fileName="Nempo-Story-01-Today-Bingkai-Transparan.png"
+              label="Download PNG · bingkai transparan"
+              className="inline-flex items-center gap-2 rounded-full bg-[#0e3a1c] px-4 py-2 text-[11px] font-black text-white shadow-[0_8px_20px_rgba(14,58,28,0.2)] transition-colors hover:bg-[#175a2c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffdd00] focus-visible:ring-offset-2"
+            />
+            <p className="max-w-[92vw] text-center text-[10px] font-medium text-slate-600">
+              PNG 3240×5760, teks tajam. Versi bingkai transparan hanya berisi bingkai panggung, lampu dan logo — bagian tengahnya kosong, tinggal ditumpuk di atas video. Di iPad/iPhone pilih “Simpan Gambar” atau “Simpan ke File”.
+            </p>
+          </div>
+        )}
         {isGgsMen && ggsMenSlide === 11 && (
           <div className="mb-3 flex justify-center">
             <PrebuiltPngDownload
@@ -3747,7 +3786,7 @@ function App() {
           </div>
         )}
         {isGgsMen && ggsMenSlide === 1 && <div className="mb-3"><Button asChild><a href={ggsMenVideo.url} download="GGS-Cowok-Pilihan-Rambut.mp4"><Download className="h-4 w-4" aria-hidden="true" />Download video · MP4 1440×1920</a></Button></div>}
-        {!isGgsMen && !isCoupon && !isQCard && !isSpreadsheet && !isRundown && !isBumper && (
+        {!isGgsMen && !isCoupon && !isQCard && !isSpreadsheet && !isRundown && !isBumper && !isNempoStory && (
           <div className="mb-3 flex flex-col items-center gap-2">
             {activeFeed === 'client' && activeClientSlide === 12 ? (
               <Button asChild>
@@ -4414,6 +4453,8 @@ function App() {
           <Ggs2027Calendar exportRef={exportRef} />
         ) : isGarutBeans ? (
           <GarutBeansOpeningSlide key={garutBeansSlide} exportRef={exportRef} />
+        ) : isNempoStory ? (
+          <NempoStoryTodaySlide exportRef={exportRef} />
         ) : isGgsMen ? (
           ggsMenSlide === 11 ? <GgsMenTeaserSpesialSlide exportRef={exportRef} /> : ggsMenSlide === 10 ? <GgsMenUndanganSlide exportRef={exportRef} /> : ggsMenSlide === 9 ? <GgsMenGiveawaySlide exportRef={exportRef} /> : ggsMenSlide === 8 ? <GgsMenPovSlide exportRef={exportRef} /> : ggsMenSlide === 7 ? <GgsMenCutCoverSlide exportRef={exportRef} lead="Two" tail="Block" photo={ggsMenTwoBlockPhoto.url} photoWidth={1478} photoHeight={1504} photoPosition="50% 30%" /> : ggsMenSlide === 6 ? <GgsMenColouringPromoSlide exportRef={exportRef} /> : ggsMenSlide === 5 ? <GgsMenPermPromoSlide exportRef={exportRef} /> : ggsMenSlide === 4 ? <GgsMenCutCoverSlide exportRef={exportRef} /> : ggsMenSlide === 3 ? <GgsMenDoubleDaySlide exportRef={exportRef} /> : ggsMenSlide === 2 ? <GgsMenContactSlide exportRef={exportRef} /> : <GgsMenHairCardsSlide exportRef={exportRef} />
         ) : isGgsFeed ? (

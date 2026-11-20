@@ -133,3 +133,4 @@
 - [x] Surat Art Center: tanda tangan Derian dari foto aslinya (dibersihkan dari kertas)
 - [x] Surat Art Center: rincian kegiatan jadi daftar bernomor (nama kegiatan, hari, waktu, tempat, peserta, fasilitas)
 - [x] Surat Art Center: tanda tangan Syahrul dari foto aslinya (PNG transparan tinta hitam)
+- [x] Nempo Story tab: sampul story 9:16 "Today · Good Story Cafe · BAJIDORAN x Dj" di bingkai panggung slide 52, PNG 3240×5760 penuh + bingkai transparan

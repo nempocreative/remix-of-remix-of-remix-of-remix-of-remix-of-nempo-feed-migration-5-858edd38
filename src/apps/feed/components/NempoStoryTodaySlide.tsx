@@ -5,9 +5,10 @@ import saduliLogo from '@/assets/saduli-ragap-entertainment-logo-keyed.png';
 import bgImage from '@/assets/nempo-feed-slide-50-bg.jpg';
 // Same ribbon-free truss frame as NEMPO Feed slide 52.
 import frameAsset from '@/assets/nempo-feed-52-stage-frame-no-ribbons.webp.asset.json';
-import { nempoStoryToday as P } from './nempo-story-today';
+import { nempoStoryToday as P, NEMPO_STORY_CLEAR_BOX as CLEAR } from './nempo-story-today';
 import { STAGE_LAMPS, STAGE_SPOTS, stageLightStyle } from './nempo-stage-lights';
 import './NempoAjakRequestSlide.css';
+import './KalaMudaRecruitSlide.css';
 import './NempoStoryTodaySlide.css';
 
 /**
@@ -41,6 +42,11 @@ export function NempoStoryTodaySlide({ exportRef, clear = false }: { exportRef?:
         </span>
 
         <div className="nst-copy">
+          <p className="nst-kicker">
+            <span>{P.date.weekday}</span>
+            <span className="nst-kicker-dot" aria-hidden="true" />
+            <span>{P.date.day} {P.date.month} {P.date.year}</span>
+          </p>
           <h2 className="nst-headline" data-text={headline}>{headline}</h2>
           <p className="nst-venue">
             <span className="nst-venue-logo"><img src={gscLogo} alt="" draggable={false} /></span>
@@ -56,18 +62,32 @@ export function NempoStoryTodaySlide({ exportRef, clear = false }: { exportRef?:
         </div>
       </div>
 
-      <header className="nst-header">
-        <span className="kmt-logo"><img src="/nempo-feed/assets/nempo-new.webp" alt="Logo N resmi Nempo" draggable={false} /></span>
-        <span className="kmt-name">
-          <strong>NEMPO.ID</strong>
-          <span><b>×</b> Kala Muda</span>
+      <header className="kmt-header nst-header">
+        <span className="kmt-brand">
+          <span className="kmt-logo"><img src="/nempo-feed/assets/nempo-new.webp" alt="Logo N resmi Nempo" draggable={false} /></span>
+          <span className="kmt-name">
+            <strong>NEMPO.ID</strong>
+            <span><b>×</b> Kala Muda</span>
+          </span>
+        </span>
+        <span className="nar-partners nst-partners">
+          <img className="nar-saduli" src={saduliLogo} alt="Saduli Ragap Entertainment" draggable={false} />
+          <span className="nar-gsc"><img src={gscLogo} alt="Logo Good Story Cafe" draggable={false} /></span>
         </span>
       </header>
 
-      <footer className="nst-partners">
-        <img className="nst-saduli" src={saduliLogo} alt="Saduli Ragap Entertainment" draggable={false} />
-        <span className="nst-gsc"><img src={gscLogo} alt="Logo Good Story Cafe" draggable={false} /></span>
-      </footer>
+      {clear && (
+        <span
+          className="nst-clear-hole"
+          aria-hidden="true"
+          style={{
+            left: `${CLEAR.left}cqw`,
+            top: `${CLEAR.top}cqh`,
+            width: `${CLEAR.width}cqw`,
+            height: `${CLEAR.height}cqh`,
+          }}
+        />
+      )}
     </section>
   );
 }

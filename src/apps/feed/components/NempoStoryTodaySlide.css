@@ -1,0 +1,173 @@
+/* NEMPO Story 01 — 9:16 "Today" cover on slide 52 green stage. Tokens: nsd and nar classes in styles.css, kmt classes in KalaMudaRecruitSlide.css.
+   The compound .nst-root.nar-root selector outspecifies the 3:4 stage rule that is loaded after this file. */
+.nst-root.nar-root {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 45vh);
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  container-type: inline-size;
+  background: var(--nsd-stage);
+  color: var(--nsd-white);
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 24px 70px color-mix(in srgb, #04140a 35%, transparent);
+}
+.nst-root * { letter-spacing: 0; box-sizing: border-box; }
+.nst-root p, .nst-root h2 { margin: 0; padding: 0; }
+
+/* Transparent-background export: the frame's open middle becomes a real hole,
+   so the PNG can be stacked over a video. Only used while capturing the file. */
+.nst-root.nst-root--clear { background: transparent; box-shadow: none; }
+.nst-clear-hole {
+  position: absolute;
+  z-index: 9;
+  background: transparent;
+  mix-blend-mode: destination-out;
+  pointer-events: none;
+}
+
+/* Backdrop layers (bg photo, beams, glow, spot beams) that the clear export drops. */
+.nst-backdrop { pointer-events: none; }
+
+/* Header: NEMPO.ID × Kala Muda on the left, Saduli + Good Story Cafe on the right. */
+.nst-header { z-index: 7; top: 5cqw; left: 6cqw; right: 6cqw; }
+.nst-header .kmt-logo { width: 9cqw; height: 9cqw; }
+.nst-header .kmt-name strong { font-size: 2.6cqw; }
+.nst-header .kmt-name span { font-size: 1.9cqw; }
+.nst-partners { gap: 2.2cqw; }
+.nst-partners .nar-saduli { width: 14cqw; height: 10.8cqw; }
+.nst-partners .nar-gsc { width: 9cqw; height: 9cqw; }
+
+/* The copy block sits inside the truss opening (see NEMPO_STORY_CLEAR_BOX). */
+.nst-copy {
+  position: absolute;
+  z-index: 8;
+  left: 12cqw;
+  right: 12cqw;
+  top: 34cqh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.nst-kicker {
+  display: flex;
+  align-items: center;
+  gap: 1.6cqw;
+  padding: .7cqw 3.2cqw .8cqw;
+  border-radius: 99cqw;
+  background: var(--nsd-red-fill);
+  border: .45cqw solid var(--nsd-gold);
+  box-shadow: var(--nsd-pill-shadow);
+  font-size: 2.6cqw;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--nsd-cream);
+  white-space: nowrap;
+}
+.nst-kicker-dot { width: .9cqw; height: .9cqw; border-radius: 50%; background: var(--nsd-yellow); }
+
+.nst-headline {
+  position: relative;
+  margin-top: 3cqw !important;
+  font-family: 'Shrikhand', serif;
+  font-weight: 400;
+  font-size: 15cqw;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--nar-question-fill);
+  -webkit-text-stroke: .55cqw var(--nsd-white);
+  paint-order: stroke fill;
+  text-shadow: 0 1.1cqw 0 #b4530a, 0 1.9cqw 2.4cqw color-mix(in srgb, #04140a 60%, transparent);
+  transform: rotate(-3deg);
+}
+.nst-headline::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  color: transparent;
+  -webkit-text-stroke: 1.8cqw var(--nar-question-outline);
+  paint-order: stroke fill;
+  text-shadow: none;
+}
+
+.nst-venue {
+  margin-top: 3.4cqw !important;
+  display: flex;
+  align-items: center;
+  gap: 1.6cqw;
+  padding: .8cqw 3.4cqw .9cqw 1cqw;
+  border-radius: 99cqw;
+  background: var(--nsd-blue-fill);
+  border: .5cqw solid var(--nsd-gold);
+  box-shadow: var(--nsd-pill-shadow);
+  white-space: nowrap;
+}
+.nst-venue-logo {
+  display: grid;
+  place-items: center;
+  width: 6.2cqw;
+  height: 6.2cqw;
+  flex: none;
+  border-radius: 50%;
+  background: var(--nsd-cream);
+  overflow: hidden;
+}
+.nst-venue-logo img { width: 88%; height: 88%; object-fit: contain; }
+.nst-venue-name {
+  display: flex;
+  align-items: center;
+  gap: .8cqw;
+  font-size: 3.1cqw;
+  font-weight: 800;
+  color: var(--nsd-white);
+}
+.nst-venue-name svg { width: 3.2cqw; height: 3.2cqw; fill: var(--nsd-yellow); stroke: var(--nsd-blue); }
+
+.nst-act { margin-top: 4.2cqw !important; display: flex; flex-direction: column; align-items: center; gap: 1.6cqw; }
+.nst-act-main {
+  position: relative;
+  font-family: 'Shrikhand', serif;
+  font-weight: 400;
+  font-size: 8.6cqw;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--nsd-yellow);
+  -webkit-text-stroke: .4cqw var(--nsd-white);
+  paint-order: stroke fill;
+  text-shadow: 0 .8cqw 0 #7a1446, 0 1.5cqw 2cqw color-mix(in srgb, #04140a 60%, transparent);
+  transform: rotate(-2deg);
+}
+.nst-act-main::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  color: transparent;
+  -webkit-text-stroke: 1.4cqw var(--nar-question-outline);
+  paint-order: stroke fill;
+  text-shadow: none;
+}
+.nst-act-row { display: flex; align-items: baseline; gap: 1.6cqw; }
+.nst-act-x {
+  font-family: 'Shrikhand', serif;
+  font-size: 4.4cqw;
+  line-height: 1;
+  color: var(--nsd-pink);
+  text-shadow: 0 .4cqw 1cqw color-mix(in srgb, #04140a 60%, transparent);
+  transform: rotate(-6deg);
+}
+.nst-act-dj {
+  font-family: 'Shrikhand', serif;
+  font-size: 6.4cqw;
+  line-height: 1;
+  color: var(--nsd-white);
+  -webkit-text-stroke: .3cqw var(--nar-question-outline);
+  paint-order: stroke fill;
+  text-shadow: 0 .6cqw 1.6cqw color-mix(in srgb, #04140a 60%, transparent);
+}
