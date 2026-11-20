@@ -1,0 +1,115 @@
+{
+  "source": "github.com/nempocreative/remix-of-remix-of-remix-of-remix-of-remix-of-nempo-feed-migration-5-a27cdf4f",
+  "capabilities": [
+    {
+      "capability": "code",
+      "source": "TanStack Start app (NEMPO Feed, Tion Feed, GGS price list) with sub-apps in src/apps",
+      "outcome": "migrate",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "uploaded file bytes",
+      "source": "232 media pointers (~1.1 GB) owned by source project 102f7255; preview returns 401 and the project is outside this workspace",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "Owner makes the old project reachable (same workspace or public preview), then re-upload each file with the same asset id and filename"
+    },
+    {
+      "capability": "schema",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "records",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "auth identities",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "authorization",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "external providers",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "public endpoints/callbacks/webhooks/schedules",
+      "source": "none detected",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "secrets",
+      "source": "none required",
+      "outcome": "not_applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "cutover",
+      "source": "source project URL",
+      "outcome": "user_decision",
+      "status": "pending",
+      "next_action": "Publish this project when ready"
+    },
+    {
+      "capability": "verification",
+      "source": "41 test files / 175 tests pass; /, /nempo-feed, /tion-feed, /ggs-price-list load with no broken images, failed requests or console errors",
+      "outcome": "verify",
+      "status": "pending",
+      "next_action": "Recheck pages once media is re-uploaded"
+    }
+  ],
+  "mou": {
+    "source": "github.com/nempocreative/organizer artifacts/nempo-mou",
+    "capabilities": [
+      {
+        "capability": "code",
+        "source": "MoU Nempo \u00d7 GGS Beauty (4 printable A4 pages)",
+        "outcome": "migrate",
+        "status": "verified",
+        "next_action": "none"
+      },
+      {
+        "capability": "other pages (Rundown Grand Opening, Nasution Boy storyline + PDF, Kenalan deck)",
+        "source": "same artifact",
+        "outcome": "skipped_by_owner",
+        "status": "accepted",
+        "next_action": "Owner asked for the MoU only; migrate later on request"
+      },
+      {
+        "capability": "uploaded file bytes",
+        "source": "Nempo mark logo",
+        "outcome": "migrate",
+        "status": "verified",
+        "next_action": "none"
+      },
+      {
+        "capability": "verification",
+        "source": "/nempo-mou loads on desktop and phone without errors; print gives 4 A4 pages with text",
+        "outcome": "verify",
+        "status": "verified",
+        "next_action": "none"
+      }
+    ]
+  }
+}
