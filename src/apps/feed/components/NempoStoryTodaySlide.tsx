@@ -3,8 +3,8 @@ import { MapPin } from 'lucide-react';
 import gscLogo from '@/assets/good-story-cafe-logo.jpg';
 import saduliLogo from '@/assets/saduli-ragap-entertainment-logo-keyed.png';
 import bgImage from '@/assets/nempo-feed-slide-50-bg.jpg';
-// Same ribbon-free truss frame as NEMPO Feed slide 52.
-import frameAsset from '@/assets/nempo-feed-52-stage-frame-no-ribbons.webp.asset.json';
+// Slide 52's ribbon-free truss frame with the lower yellow spot beams repainted to fade out softly.
+import frameAsset from '@/assets/nempo-story/nempo-story-stage-frame.webp.asset.json';
 import { nempoStoryToday as P, NEMPO_STORY_CLEAR_BOX as CLEAR } from './nempo-story-today';
 import { STAGE_LAMPS, STAGE_SPOTS, stageLightStyle } from './nempo-stage-lights';
 import './NempoAjakRequestSlide.css';
