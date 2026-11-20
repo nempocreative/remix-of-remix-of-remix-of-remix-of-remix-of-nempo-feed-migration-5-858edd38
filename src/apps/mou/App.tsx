@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@tanstack/react-router';
 import mark from '@/assets/mou/nempo-mark.png.asset.json';
 import { SuratArtCenterDocument } from '@/apps/mou/pages/surat-art-center';
+import { SuratDinasDocument } from '@/apps/mou/pages/surat-dinas';
 
 const totalPages = 4;
 
@@ -391,7 +392,7 @@ function DocPageFooter({ page }: { page: number }) {
   );
 }
 
-export type MouPageKey = 'mou' | 'surat-art-center';
+export type MouPageKey = 'mou' | 'surat-art-center' | 'surat-dinas';
 
 function AppHeader({ active }: { active: MouPageKey }) {
   return (
@@ -415,6 +416,13 @@ function AppHeader({ active }: { active: MouPageKey }) {
         >
           Surat Art Center
         </Link>
+        <Link
+          to="/nempo-mou/surat-dinas"
+          className={`app-nav-link${active === 'surat-dinas' ? ' is-active' : ''}`}
+          aria-current={active === 'surat-dinas' ? 'page' : undefined}
+        >
+          Surat Dinas
+        </Link>
       </nav>
       <div className="top-actions">
         <Button
@@ -434,7 +442,12 @@ function AppHeader({ active }: { active: MouPageKey }) {
 }
 
 function DocumentPage({ active }: { active: MouPageKey }) {
-  const Doc = active === 'surat-art-center' ? SuratArtCenterDocument : MouDocument;
+  const documents = {
+    'mou': MouDocument,
+    'surat-art-center': SuratArtCenterDocument,
+    'surat-dinas': SuratDinasDocument,
+  } as const;
+  const Doc = documents[active];
   return (
     <div className="app-shell">
       <AppHeader active={active} />

@@ -36,6 +36,19 @@ export const suratArtCenter = {
     penandatangan: 'Syahrul Ramadhani Nasution',
     jabatan: 'Founder Nempo',
   },
+  /** Surat ditandatangani dua pihak: kiri Ketua Pelaksana, kanan Founder Nempo.id. */
+  penandatangan: [
+    {
+      nama: 'Derian Cahyadi Saputra Wiraatmaja',
+      jabatan: 'Ketua Pelaksana',
+      mengetahui: false,
+    },
+    {
+      nama: 'Syahrul Ramadhani Nasution',
+      jabatan: 'Founder Nempo.id',
+      mengetahui: true,
+    },
+  ],
   acara: {
     nama: 'Pasanggiri Jaipong se-Jawa Barat & Pemilihan Duta Pasar Seni',
     tema: 'Road to Pasar Seni 2027',

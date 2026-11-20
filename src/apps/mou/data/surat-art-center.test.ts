@@ -27,4 +27,11 @@ describe('surat peminjaman Gedung Art Center', () => {
     expect(tanggalLengkap('2026-11-20', false)).toBe('20 November 2026');
     expect(tanggalLengkap('2026-11-20')).toBe('Jumat, 20 November 2026');
   });
+
+  it('ditandatangani dua orang: Ketua Pelaksana lalu Founder Nempo.id', () => {
+    expect(suratArtCenter.penandatangan.map((p) => `${p.nama} — ${p.jabatan}`)).toEqual([
+      'Derian Cahyadi Saputra Wiraatmaja — Ketua Pelaksana',
+      'Syahrul Ramadhani Nasution — Founder Nempo.id',
+    ]);
+  });
 });
