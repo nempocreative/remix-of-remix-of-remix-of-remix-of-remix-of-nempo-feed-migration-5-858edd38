@@ -1,3 +1,5 @@
+import derianTtd from '@/assets/mou/derian-signature.png.asset.json';
+
 /**
  * Surat permohonan peminjaman Gedung Art Center untuk Pasanggiri Jaipong
  * (Road to Pasar Seni 2027). Detail lomba mengikuti situs NEMPO
@@ -39,14 +41,16 @@ export const suratArtCenter = {
   /** Surat ditandatangani dua pihak: kiri Ketua Pelaksana, kanan Founder Nempo.id. */
   penandatangan: [
     {
-      nama: 'Derian Cahyadi Saputra Wiraatmaja',
+      nama: 'Derian Cahyadi S. W',
       jabatan: 'Ketua Pelaksana',
       mengetahui: false,
+      tandaTangan: derianTtd.url,
     },
     {
       nama: 'Syahrul Ramadhani Nasution',
       jabatan: 'Founder Nempo.id',
       mengetahui: true,
+      tandaTangan: null as string | null,
     },
   ],
   acara: {

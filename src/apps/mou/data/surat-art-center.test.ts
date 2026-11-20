@@ -30,8 +30,14 @@ describe('surat peminjaman Gedung Art Center', () => {
 
   it('ditandatangani dua orang: Ketua Pelaksana lalu Founder Nempo.id', () => {
     expect(suratArtCenter.penandatangan.map((p) => `${p.nama} — ${p.jabatan}`)).toEqual([
-      'Derian Cahyadi Saputra Wiraatmaja — Ketua Pelaksana',
+      'Derian Cahyadi S. W — Ketua Pelaksana',
       'Syahrul Ramadhani Nasution — Founder Nempo.id',
     ]);
+  });
+
+  it('tanda tangan Derian memakai foto aslinya, Syahrul belum punya foto', () => {
+    const [derian, syahrul] = suratArtCenter.penandatangan;
+    expect(derian.tandaTangan).toContain('derian-signature.png');
+    expect(syahrul.tandaTangan).toBeNull();
   });
 });

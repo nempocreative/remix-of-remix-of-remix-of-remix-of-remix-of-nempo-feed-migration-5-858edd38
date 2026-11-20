@@ -327,20 +327,24 @@ button { cursor: pointer; }
 .letter-kop-copy span { color: #625c52; font: 10px/1.4 var(--doc-font); }
 .letter-meta { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
 .letter-meta-list { margin: 0; display: grid; gap: 1px; }
-.letter-meta-list > div, .letter-details > div { display: grid; grid-template-columns: 74px 12px minmax(0, 1fr); }
-.letter-meta-list dt, .letter-meta-list dd, .letter-details dt, .letter-details dd { margin: 0; min-width: 0; }
+.letter-meta-list > div { display: grid; grid-template-columns: 74px 12px minmax(0, 1fr); }
+.letter-meta-list dt, .letter-meta-list dd { margin: 0; min-width: 0; }
 .letter-date { margin: 0; white-space: nowrap; }
 .letter-to { margin-bottom: 16px; }
 .letter-to p { margin: 0; }
 .letter-to-place { text-decoration: underline; }
 .letter-body p { margin: 0 0 9px; text-align: justify; text-justify: inter-word; }
-.letter-details { margin: 2px 0 11px 18px; display: grid; gap: 3px; }
-.letter-details > div { grid-template-columns: 150px 12px minmax(0, 1fr); }
-.letter-facilities { margin: 0; padding-left: 17px; list-style: decimal; }
+.letter-details-list { margin: 4px 0 12px; padding-left: 26px; list-style: decimal; }
+.letter-details-list > li + li { margin-top: 5px; }
+.letter-details-list > li > strong { font-weight: 700; }
+.letter-details-list > li > strong::after { content: " —"; }
+.letter-facilities { margin: 3px 0 0; padding-left: 19px; list-style: disc; }
 .letter-facilities li { margin: 0; }
 .letter-sign { margin: 18px 0 0 auto; width: 250px; text-align: center; break-inside: avoid; }
 .letter-sign p { margin: 0; }
-.letter-sign-space { height: 74px; }
+.letter-sign-space { height: 96px; display: flex; align-items: flex-end; justify-content: center; }
+.letter-sign-img { height: 100%; width: auto; max-width: 100%; }
+.letter-sign-script { width: 100%; height: 100%; color: #1a1a22; transform: rotate(-2deg); }
 .letter-sign-name { font-weight: 700; text-decoration: underline; }
 /* Dua tanda tangan bersebelahan: Ketua Pelaksana (kiri) dan Founder Nempo.id (kanan). */
 .letter-sign-grid {
@@ -359,10 +363,7 @@ button { cursor: pointer; }
   .app-nav-link { padding: 0 9px; font-size: 11px; }
   .letter-page { font-size: 13px; }
   .letter-meta { flex-direction: column-reverse; gap: 8px; }
-  .letter-details { margin-left: 0; }
-  .letter-details > div { grid-template-columns: 1fr; }
-  .letter-details > div > span { display: none; }
-  .letter-details dt { font-weight: 700; }
+  .letter-details-list { padding-left: 18px; }
   .letter-sign { margin-top: 22px; }
   .letter-sign-grid { gap: 8px; margin-top: 22px; }
 }
@@ -387,6 +388,8 @@ button { cursor: pointer; }
   .mou-scope .print-root .letter-sign { margin-top: 5mm; width: 70mm; }
   .mou-scope .print-root .letter-sign-space { height: 22mm; }
   .mou-scope .print-root .letter-sign-grid { margin-top: 5mm; gap: 4mm; }
+  .mou-scope .print-root .letter-details-list { margin: 1.5mm 0 4mm; padding-left: 8mm; }
+  .mou-scope .print-root .letter-details-list > li + li { margin-top: 1.2mm; }
   .mou-scope .print-root .letter-kop-copy strong { font-size: 17pt; }
   .mou-scope .print-root .letter-kop-copy span { font-size: 8.5pt; }
   .mou-scope .print-root .letter-contact { font-size: 8pt; }

@@ -47,24 +47,19 @@ export function SuratArtCenterDocument() {
             Sehubungan dengan hal tersebut, kami bermaksud mengajukan permohonan peminjaman Gedung Art
             Center untuk pelaksanaan kegiatan tersebut, dengan rincian sebagai berikut:
           </p>
-          <dl className="letter-details">
-            <div><dt>Nama kegiatan</dt><span aria-hidden="true">:</span><dd>{s.acara.nama} ({s.acara.tema})</dd></div>
-            <div><dt>Hari, tanggal</dt><span aria-hidden="true">:</span><dd>{rentangAcara()}</dd></div>
-            <div><dt>Waktu</dt><span aria-hidden="true">:</span><dd>{s.acara.waktu}</dd></div>
-            <div><dt>Tempat</dt><span aria-hidden="true">:</span><dd>{s.acara.tempat}</dd></div>
-            <div>
-              <dt>Peserta</dt><span aria-hidden="true">:</span>
-              <dd>Penari Jaipong kategori {daftarKategori} (kuota {s.acara.kuotaPerKategori} peserta per kategori)</dd>
-            </div>
-            <div>
-              <dt>Fasilitas yang dimohon</dt><span aria-hidden="true">:</span>
-              <dd>
-                <ol className="letter-facilities">
-                  {s.fasilitas.map((f) => <li key={f}>{f}</li>)}
-                </ol>
-              </dd>
-            </div>
-          </dl>
+          <ol className="letter-details-list">
+            <li><strong>Nama kegiatan</strong> {s.acara.nama} ({s.acara.tema})</li>
+            <li><strong>Hari, tanggal</strong> {rentangAcara()}</li>
+            <li><strong>Waktu</strong> {s.acara.waktu}</li>
+            <li><strong>Tempat</strong> {s.acara.tempat}</li>
+            <li><strong>Peserta</strong> Penari Jaipong kategori {daftarKategori} (kuota {s.acara.kuotaPerKategori} peserta per kategori)</li>
+            <li>
+              <strong>Fasilitas yang dimohon</strong>
+              <ul className="letter-facilities">
+                {s.fasilitas.map((f) => <li key={f}>{f}</li>)}
+              </ul>
+            </li>
+          </ol>
           <p>
             Selama penggunaan gedung, kami bersedia menjaga kebersihan, ketertiban, dan keamanan gedung,
             bertanggung jawab atas kerusakan yang timbul akibat kegiatan kami, serta mematuhi ketentuan
@@ -81,7 +76,31 @@ export function SuratArtCenterDocument() {
             <div className="letter-sign-cell" key={penandatangan.nama}>
               {penandatangan.mengetahui ? <p className="letter-sign-know">Mengetahui,</p> : null}
               <p className="letter-sign-role">{penandatangan.jabatan}</p>
-              <div className="letter-sign-space" aria-hidden="true" />
+              <div className="letter-sign-space">
+                {penandatangan.tandaTangan ? (
+                  <img className="letter-sign-img" src={penandatangan.tandaTangan} alt="" />
+                ) : (
+                  <svg
+                    className="letter-sign-script"
+                    viewBox="0 0 200 46"
+                    role="img"
+                    aria-label={`Tanda tangan ${penandatangan.nama}`}
+                  >
+                    <text
+                      x="100"
+                      y="34"
+                      textAnchor="middle"
+                      textLength="186"
+                      lengthAdjust="spacingAndGlyphs"
+                      fontFamily="Yellowtail, cursive"
+                      fontSize="30"
+                      fill="currentColor"
+                    >
+                      {penandatangan.nama}
+                    </text>
+                  </svg>
+                )}
+              </div>
               <p className="letter-sign-name">{penandatangan.nama}</p>
             </div>
           ))}

@@ -129,3 +129,7 @@
 - [x] NEMPO Feed slide 52: shrink text/shapes to fit the frame, remove the gold ribbon confetti, re-record MP4
 
 - [x] Surat Art Center: 2 tanda tangan (Ketua Pelaksana Derian Cahyadi Saputra Wiraatmaja & Founder Nempo.id Syahrul Ramadhani Nasution)
+- [x] Surat Art Center: nama Derian satu baris "Derian Cahyadi S. W"
+- [x] Surat Art Center: tanda tangan Derian dari foto aslinya (dibersihkan dari kertas), Syahrul pakai tulisan digital
+- [x] Surat Art Center: rincian kegiatan jadi daftar bernomor (nama kegiatan, hari, waktu, tempat, peserta, fasilitas)
+- [ ] Tanda tangan Syahrul: menunggu foto aslinya (PNG pertama terkirim hitam/transparan)
