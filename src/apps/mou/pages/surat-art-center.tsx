@@ -74,7 +74,7 @@ export function SuratArtCenterDocument() {
         <div className="letter-sign-grid">
           {s.penandatangan.map((penandatangan) => (
             <div className="letter-sign-cell" key={penandatangan.nama}>
-              {penandatangan.mengetahui ? <p className="letter-sign-know">Mengetahui,</p> : null}
+              <p className="letter-sign-know">{penandatangan.mengetahui ? 'Mengetahui,' : ' '}</p>
               <p className="letter-sign-role">{penandatangan.jabatan}</p>
               <div className="letter-sign-space">
                 {penandatangan.tandaTangan ? (
