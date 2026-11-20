@@ -1,7 +1,8 @@
 # Roadmap
 
 
-- [ ] Pasang foto/video yang tersedia di GitHub (riwayat repo + repo sumber nempo-60 / organizer); sisanya menunggu akses proyek lama
+- [x] Pasang foto/video yang tersedia di GitHub (225 dari 232 kembali)
+- [ ] 7 file sisa (GGS slide 61 & 62, GGS Cowok 11, NEMPO 52): menunggu foto dari pemilik atau akses ke proyek lama
 - [x] NEMPO slide 49 revision: rebuild green one-DJ video from the re-uploaded photos (v2 was lost in the remix), replace video and cover, verify download
 
 - [x] NEMPO Feed slide 49: DJ portrait animation, matching video preview and MP4 download

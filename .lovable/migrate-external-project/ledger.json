@@ -10,10 +10,10 @@
     },
     {
       "capability": "uploaded file bytes",
-      "source": "232 media pointers (~1.1 GB) owned by source project 102f7255; preview returns 401 and the project is outside this workspace",
+      "source": "232 media pointers; 225 re-uploaded with the same asset ids/filenames from GitHub repos (organizer, migration-5-6b2e87dc project preview); 7 exist only in the private old project",
       "outcome": "migrate",
       "status": "pending",
-      "next_action": "Owner makes the old project reachable (same workspace or public preview), then re-upload each file with the same asset id and filename"
+      "next_action": "Owner re-uploads GGS website screenshots (slide 61) and slide 52 frame, or grants access to the old project; then re-record slide 61/62/Cowok 11 PNGs and slide 52 MP4"
     },
     {
       "capability": "schema",
@@ -76,7 +76,7 @@
       "source": "41 test files / 175 tests pass; /, /nempo-feed, /tion-feed, /ggs-price-list load with no broken images, failed requests or console errors",
       "outcome": "verify",
       "status": "pending",
-      "next_action": "Recheck pages once media is re-uploaded"
+      "next_action": "All 225 restored files serve 200 with matching sizes; recheck the 7 once restored"
     }
   ],
   "mou": {
