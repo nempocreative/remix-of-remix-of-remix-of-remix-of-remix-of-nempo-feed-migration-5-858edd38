@@ -66,7 +66,10 @@ export const suratArtCenter = {
   },
   fasilitas: [
     'Ruang pertunjukan beserta panggung',
+    'Sound system dan perlengkapan audio',
+    'Kursi penonton, kursi juri, dan meja panitia',
     'Ruang rias dan ruang ganti peserta',
+    'Toilet dan tempat wudhu',
     'Area parkir pengunjung',
   ],
 } as const;
