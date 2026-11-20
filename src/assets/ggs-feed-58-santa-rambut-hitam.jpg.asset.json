@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "91dccf9f-1352-4fa3-9014-9e84a90e681f",
-  "project_id": "3f4748f2-b902-4884-a3ce-145df6a90614",
-  "url": "/__l5e/assets-v1/91dccf9f-1352-4fa3-9014-9e84a90e681f/ggs-feed-58-santa-rambut-hitam.jpg",
-  "r2_key": "a/v1/3f4748f2-b902-4884-a3ce-145df6a90614/91dccf9f-1352-4fa3-9014-9e84a90e681f/ggs-feed-58-santa-rambut-hitam.jpg",
-  "original_filename": "ggs-feed-58-santa-rambut-hitam.jpg",
-  "size": 419173,
   "content_type": "image/jpeg",
-  "created_at": "2026-11-20T09:05:22Z"
+  "created_at": "2026-11-20T09:05:22Z",
+  "original_filename": "ggs-feed-58-santa-rambut-hitam.jpg",
+  "project_id": "7f3bd684-47da-4e3a-afe3-ffe45c4d136f",
+  "r2_key": "a/v1/7f3bd684-47da-4e3a-afe3-ffe45c4d136f/91dccf9f-1352-4fa3-9014-9e84a90e681f/ggs-feed-58-santa-rambut-hitam.jpg",
+  "size": 419173,
+  "url": "/__l5e/assets-v1/91dccf9f-1352-4fa3-9014-9e84a90e681f/ggs-feed-58-santa-rambut-hitam.jpg",
+  "version": 1
 }

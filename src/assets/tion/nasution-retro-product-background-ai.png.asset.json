@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "e2d6c37a-30dd-4b18-9ce9-443fea7d34d3",
-  "project_id": "3f4748f2-b902-4884-a3ce-145df6a90614",
-  "url": "/__l5e/assets-v1/e2d6c37a-30dd-4b18-9ce9-443fea7d34d3/nasution-retro-product-background-ai.png",
-  "r2_key": "a/v1/3f4748f2-b902-4884-a3ce-145df6a90614/e2d6c37a-30dd-4b18-9ce9-443fea7d34d3/nasution-retro-product-background-ai.png",
-  "original_filename": "nasution-retro-product-background-ai.png",
-  "size": 1784379,
   "content_type": "image/png",
-  "created_at": "2026-11-20T09:07:40Z"
+  "created_at": "2026-11-20T09:07:40Z",
+  "original_filename": "nasution-retro-product-background-ai.png",
+  "project_id": "7f3bd684-47da-4e3a-afe3-ffe45c4d136f",
+  "r2_key": "a/v1/7f3bd684-47da-4e3a-afe3-ffe45c4d136f/e2d6c37a-30dd-4b18-9ce9-443fea7d34d3/nasution-retro-product-background-ai.png",
+  "size": 1784379,
+  "url": "/__l5e/assets-v1/e2d6c37a-30dd-4b18-9ce9-443fea7d34d3/nasution-retro-product-background-ai.png",
+  "version": 1
 }
