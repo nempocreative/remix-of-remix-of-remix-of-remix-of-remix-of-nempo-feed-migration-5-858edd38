@@ -1,4 +1,5 @@
 import derianTtd from '@/assets/mou/derian-signature.png.asset.json';
+import syahrulTtd from '@/assets/mou/syahrul-signature.png.asset.json';
 
 /**
  * Surat permohonan peminjaman Gedung Art Center untuk Pasanggiri Jaipong
@@ -50,7 +51,7 @@ export const suratArtCenter = {
       nama: 'Syahrul Ramadhani Nasution',
       jabatan: 'Founder Nempo.id',
       mengetahui: true,
-      tandaTangan: null as string | null,
+      tandaTangan: syahrulTtd.url,
     },
   ],
   acara: {

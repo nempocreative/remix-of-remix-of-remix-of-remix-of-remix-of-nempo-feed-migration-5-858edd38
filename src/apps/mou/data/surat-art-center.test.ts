@@ -35,9 +35,9 @@ describe('surat peminjaman Gedung Art Center', () => {
     ]);
   });
 
-  it('tanda tangan Derian memakai foto aslinya, Syahrul belum punya foto', () => {
+  it('tanda tangan Derian dan Syahrul memakai foto aslinya', () => {
     const [derian, syahrul] = suratArtCenter.penandatangan;
     expect(derian.tandaTangan).toContain('derian-signature.png');
-    expect(syahrul.tandaTangan).toBeNull();
+    expect(syahrul.tandaTangan).toContain('syahrul-signature.png');
   });
 });
