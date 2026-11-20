@@ -17,7 +17,6 @@ import { Route as NempoFeedSplatRouteImport } from './routes/nempo-feed.$'
 import { Route as NempoMouIndexRouteImport } from './routes/nempo-mou.index'
 import { Route as NempoMouSplatRouteImport } from './routes/nempo-mou.$'
 import { Route as NempoMouSuratArtCenterRouteImport } from './routes/nempo-mou.surat-art-center'
-import { Route as NempoMouSuratDinasRouteImport } from './routes/nempo-mou.surat-dinas'
 import { Route as TionFeedIndexRouteImport } from './routes/tion-feed.index'
 import { Route as TionFeedSplatRouteImport } from './routes/tion-feed.$'
 
@@ -61,11 +60,6 @@ const NempoMouSuratArtCenterRoute = NempoMouSuratArtCenterRouteImport.update({
   path: '/nempo-mou/surat-art-center',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NempoMouSuratDinasRoute = NempoMouSuratDinasRouteImport.update({
-  id: '/nempo-mou/surat-dinas',
-  path: '/nempo-mou/surat-dinas',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const TionFeedIndexRoute = TionFeedIndexRouteImport.update({
   id: '/tion-feed/',
   path: '/tion-feed/',
@@ -83,7 +77,6 @@ export interface FileRoutesByFullPath {
   '/nempo-feed/$': typeof NempoFeedSplatRoute
   '/nempo-mou/$': typeof NempoMouSplatRoute
   '/nempo-mou/surat-art-center': typeof NempoMouSuratArtCenterRoute
-  '/nempo-mou/surat-dinas': typeof NempoMouSuratDinasRoute
   '/tion-feed/$': typeof TionFeedSplatRoute
   '/ggs-price-list/': typeof GgsPriceListIndexRoute
   '/nempo-feed/': typeof NempoFeedIndexRoute
@@ -96,7 +89,6 @@ export interface FileRoutesByTo {
   '/nempo-feed/$': typeof NempoFeedSplatRoute
   '/nempo-mou/$': typeof NempoMouSplatRoute
   '/nempo-mou/surat-art-center': typeof NempoMouSuratArtCenterRoute
-  '/nempo-mou/surat-dinas': typeof NempoMouSuratDinasRoute
   '/tion-feed/$': typeof TionFeedSplatRoute
   '/ggs-price-list': typeof GgsPriceListIndexRoute
   '/nempo-feed': typeof NempoFeedIndexRoute
@@ -110,7 +102,6 @@ export interface FileRoutesById {
   '/nempo-feed/$': typeof NempoFeedSplatRoute
   '/nempo-mou/$': typeof NempoMouSplatRoute
   '/nempo-mou/surat-art-center': typeof NempoMouSuratArtCenterRoute
-  '/nempo-mou/surat-dinas': typeof NempoMouSuratDinasRoute
   '/tion-feed/$': typeof TionFeedSplatRoute
   '/ggs-price-list/': typeof GgsPriceListIndexRoute
   '/nempo-feed/': typeof NempoFeedIndexRoute
@@ -125,7 +116,6 @@ export interface FileRouteTypes {
     | '/nempo-feed/$'
     | '/nempo-mou/$'
     | '/nempo-mou/surat-art-center'
-    | '/nempo-mou/surat-dinas'
     | '/tion-feed/$'
     | '/ggs-price-list/'
     | '/nempo-feed/'
@@ -138,7 +128,6 @@ export interface FileRouteTypes {
     | '/nempo-feed/$'
     | '/nempo-mou/$'
     | '/nempo-mou/surat-art-center'
-    | '/nempo-mou/surat-dinas'
     | '/tion-feed/$'
     | '/ggs-price-list'
     | '/nempo-feed'
@@ -151,7 +140,6 @@ export interface FileRouteTypes {
     | '/nempo-feed/$'
     | '/nempo-mou/$'
     | '/nempo-mou/surat-art-center'
-    | '/nempo-mou/surat-dinas'
     | '/tion-feed/$'
     | '/ggs-price-list/'
     | '/nempo-feed/'
@@ -165,7 +153,6 @@ export interface RootRouteChildren {
   NempoFeedSplatRoute: typeof NempoFeedSplatRoute
   NempoMouSplatRoute: typeof NempoMouSplatRoute
   NempoMouSuratArtCenterRoute: typeof NempoMouSuratArtCenterRoute
-  NempoMouSuratDinasRoute: typeof NempoMouSuratDinasRoute
   TionFeedSplatRoute: typeof TionFeedSplatRoute
   GgsPriceListIndexRoute: typeof GgsPriceListIndexRoute
   NempoFeedIndexRoute: typeof NempoFeedIndexRoute
@@ -231,13 +218,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NempoMouSuratArtCenterRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/nempo-mou/surat-dinas': {
-      id: '/nempo-mou/surat-dinas'
-      path: '/nempo-mou/surat-dinas'
-      fullPath: '/nempo-mou/surat-dinas'
-      preLoaderRoute: typeof NempoMouSuratDinasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/tion-feed/': {
       id: '/tion-feed/'
       path: '/tion-feed'
@@ -261,7 +241,6 @@ const rootRouteChildren: RootRouteChildren = {
   NempoFeedSplatRoute: NempoFeedSplatRoute,
   NempoMouSplatRoute: NempoMouSplatRoute,
   NempoMouSuratArtCenterRoute: NempoMouSuratArtCenterRoute,
-  NempoMouSuratDinasRoute: NempoMouSuratDinasRoute,
   TionFeedSplatRoute: TionFeedSplatRoute,
   GgsPriceListIndexRoute: GgsPriceListIndexRoute,
   NempoFeedIndexRoute: NempoFeedIndexRoute,
