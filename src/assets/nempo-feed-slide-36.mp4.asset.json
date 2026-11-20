@@ -1,11 +1,11 @@
 {
+  "version": 1,
   "asset_id": "da4e2a4e-ee6c-4442-84a7-28aa9be9d53d",
-  "content_type": "video/mp4",
-  "created_at": "2026-11-20T02:44:38Z",
-  "original_filename": "nempo-feed-36-kala-muda-daftar-web.mp4",
-  "project_id": "102f7255-38a8-45ac-9f17-4db27b9215a0",
-  "r2_key": "a/v1/102f7255-38a8-45ac-9f17-4db27b9215a0/da4e2a4e-ee6c-4442-84a7-28aa9be9d53d/nempo-feed-36-kala-muda-daftar-web.mp4",
-  "size": 2315088,
+  "project_id": "3f4748f2-b902-4884-a3ce-145df6a90614",
   "url": "/__l5e/assets-v1/da4e2a4e-ee6c-4442-84a7-28aa9be9d53d/nempo-feed-36-kala-muda-daftar-web.mp4",
-  "version": 1
+  "r2_key": "a/v1/3f4748f2-b902-4884-a3ce-145df6a90614/da4e2a4e-ee6c-4442-84a7-28aa9be9d53d/nempo-feed-36-kala-muda-daftar-web.mp4",
+  "original_filename": "nempo-feed-36-kala-muda-daftar-web.mp4",
+  "size": 2315088,
+  "content_type": "video/mp4",
+  "created_at": "2026-11-20T09:06:45Z"
 }

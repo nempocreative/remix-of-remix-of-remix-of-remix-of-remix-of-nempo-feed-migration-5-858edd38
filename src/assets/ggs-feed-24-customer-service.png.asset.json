@@ -1,11 +1,11 @@
 {
+  "version": 1,
   "asset_id": "0beaa330-eb22-4027-b684-1ef274d66e60",
-  "content_type": "image/png",
-  "created_at": "2026-11-20T02:41:39Z",
-  "original_filename": "ggs-feed-24-customer-service.png",
-  "project_id": "102f7255-38a8-45ac-9f17-4db27b9215a0",
-  "r2_key": "a/v1/102f7255-38a8-45ac-9f17-4db27b9215a0/0beaa330-eb22-4027-b684-1ef274d66e60/ggs-feed-24-customer-service.png",
-  "size": 5908889,
+  "project_id": "3f4748f2-b902-4884-a3ce-145df6a90614",
   "url": "/__l5e/assets-v1/0beaa330-eb22-4027-b684-1ef274d66e60/ggs-feed-24-customer-service.png",
-  "version": 1
+  "r2_key": "a/v1/3f4748f2-b902-4884-a3ce-145df6a90614/0beaa330-eb22-4027-b684-1ef274d66e60/ggs-feed-24-customer-service.png",
+  "original_filename": "ggs-feed-24-customer-service.png",
+  "size": 5908889,
+  "content_type": "image/png",
+  "created_at": "2026-11-20T09:04:18Z"
 }

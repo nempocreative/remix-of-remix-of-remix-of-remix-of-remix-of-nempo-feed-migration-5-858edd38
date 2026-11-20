@@ -1,11 +1,11 @@
 {
+  "version": 1,
   "asset_id": "e59b56b8-4731-4c88-9e5a-eca452ed1f3f",
-  "content_type": "image/png",
-  "created_at": "2026-11-20T02:42:22Z",
-  "original_filename": "ggs-feed-47-kenalan-terapis.png",
-  "project_id": "102f7255-38a8-45ac-9f17-4db27b9215a0",
-  "r2_key": "a/v1/102f7255-38a8-45ac-9f17-4db27b9215a0/e59b56b8-4731-4c88-9e5a-eca452ed1f3f/ggs-feed-47-kenalan-terapis.png",
-  "size": 8477723,
+  "project_id": "3f4748f2-b902-4884-a3ce-145df6a90614",
   "url": "/__l5e/assets-v1/e59b56b8-4731-4c88-9e5a-eca452ed1f3f/ggs-feed-47-kenalan-terapis.png",
-  "version": 1
+  "r2_key": "a/v1/3f4748f2-b902-4884-a3ce-145df6a90614/e59b56b8-4731-4c88-9e5a-eca452ed1f3f/ggs-feed-47-kenalan-terapis.png",
+  "original_filename": "ggs-feed-47-kenalan-terapis.png",
+  "size": 8477723,
+  "content_type": "image/png",
+  "created_at": "2026-11-20T09:04:58Z"
 }
