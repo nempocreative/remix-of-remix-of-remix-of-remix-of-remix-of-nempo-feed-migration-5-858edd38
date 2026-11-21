@@ -1,5 +1,6 @@
 # Roadmap
 
+- [ ] NEMPO Feed slide 53: ucapan terima kasih after-event — teks saja di bingkai panggung acara, PNG transparan (tanpa foto latar)
 
 - [x] Pasang foto/video yang tersedia di GitHub (225 dari 232 kembali)
 - [ ] 7 file sisa (GGS slide 61 & 62, GGS Cowok 11, NEMPO 52): menunggu foto dari pemilik atau akses ke proyek lama

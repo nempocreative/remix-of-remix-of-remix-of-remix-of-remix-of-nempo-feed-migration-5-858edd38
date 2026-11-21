@@ -757,6 +757,18 @@
   --nbd-perf: #a0b0a5;
   --nbd-shade: linear-gradient(180deg, #162d26 0%, #162d26 40%, color-mix(in srgb, #162d26 95%, transparent) 51%, color-mix(in srgb, #162d26 15%, transparent) 74%, color-mix(in srgb, #162d26 40%, transparent) 100%);
 }
+/* Nempo Feed slide 53: after-event "Hatur Nuhun!" photo video. */
+.nte-root {
+  --nte-night: #140f1d;
+  --nte-cream: #fbf6ea;
+  --nte-cream-soft: color-mix(in srgb, #fbf6ea 78%, transparent);
+  --nte-accent: #ffd36b;
+  --nte-pill: color-mix(in srgb, #140f1d 58%, transparent);
+  --nte-pill-line: color-mix(in srgb, #fbf6ea 30%, transparent);
+  --nte-dot-glow: 0 0 1.4cqw color-mix(in srgb, #ffd36b 85%, transparent);
+  --nte-text-shadow: 0 .3cqw 2cqw color-mix(in srgb, #0a0710 80%, transparent);
+  --nte-shade: linear-gradient(180deg, color-mix(in srgb, #0a0710 62%, transparent) 0%, color-mix(in srgb, #0a0710 22%, transparent) 14%, transparent 24%, transparent 50%, color-mix(in srgb, #0a0710 55%, transparent) 64%, color-mix(in srgb, #0a0710 86%, transparent) 80%, color-mix(in srgb, #0a0710 94%, transparent) 100%);
+}
 /* Nempo Feed slide 48: 3:4 sawer clip — same natural palette as slides 46 and 47. */
 .nbf-root {
   --nbf-night: #162d26;
