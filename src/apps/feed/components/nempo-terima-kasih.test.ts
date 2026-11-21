@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { weekdayId } from './nempo-bajidoran';
-import { NEMPO_TERIMA_KASIH_SLIDE, NTE_LOOP_SECONDS, nempoTerimaKasih } from './nempo-terima-kasih';
+import { NEMPO_TERIMA_KASIH_SLIDE, NTE_EXPORT, nempoTerimaKasih } from './nempo-terima-kasih';
 
 describe('NEMPO after-event thank-you slide', () => {
   it('is the slide after "Hari Ini" (53)', () => {
@@ -12,9 +12,8 @@ describe('NEMPO after-event thank-you slide', () => {
     expect(weekdayId(date.iso)).toBe('Jumat');
     expect(venue.name).toBe('Good Story Cafe');
   });
-  it('shows all five event photos, 3 s each, in a 15 s loop', () => {
-    expect(nempoTerimaKasih.moments).toHaveLength(5);
-    expect(new Set(nempoTerimaKasih.moments.map((m) => m.photo)).size).toBe(5);
-    expect(NTE_LOOP_SECONDS).toBe(15);
+  it('downloads as a 3:4 feed PNG at 3× (3240×4320)', () => {
+    expect(NTE_EXPORT).toEqual({ width: 3240, height: 4320 });
+    expect(NTE_EXPORT.width / NTE_EXPORT.height).toBe(3 / 4);
   });
 });

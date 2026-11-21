@@ -1,50 +1,35 @@
-import type { CSSProperties, RefObject } from 'react';
+import type { RefObject } from 'react';
+import { Disc3, Drama, MapPin } from 'lucide-react';
 import gscLogo from '@/assets/good-story-cafe-logo.jpg';
 import saduliLogo from '@/assets/saduli-ragap-entertainment-logo-keyed.png';
-import penariSinden from '@/assets/nempo-feed-53/nempo-feed-53-1-penari-sinden.jpg.asset.json';
-import sinden from '@/assets/nempo-feed-53/nempo-feed-53-2-sinden.jpg.asset.json';
-import penariTertawa from '@/assets/nempo-feed-53/nempo-feed-53-3-penari-tertawa.jpg.asset.json';
-import penariPeace from '@/assets/nempo-feed-53/nempo-feed-53-4-penari-peace.jpg.asset.json';
-import djCrowd from '@/assets/nempo-feed-53/nempo-feed-53-5-dj-crowd.jpg.asset.json';
-import { nempoTerimaKasih as T, NTE_LOOP_SECONDS, NTE_SECONDS_PER_MOMENT } from './nempo-terima-kasih';
+// The event's stage frame (same clean copy as the Nempo Story cover).
+import frameAsset from '@/assets/nempo-story/nempo-story-stage-frame.webp.asset.json';
+import { nempoTerimaKasih as T } from './nempo-terima-kasih';
+import { STAGE_LAMPS, stageLightStyle } from './nempo-stage-lights';
+import './NempoAjakRequestSlide.css';
 import './NempoTerimaKasihSlide.css';
 
-const PHOTOS = {
-  penariSinden: { src: penariSinden.url, w: 1080, h: 1920, alt: 'Penari Bajidoran dan sinden di panggung Good Story Cafe' },
-  sinden: { src: sinden.url, w: 1440, h: 1920, alt: 'Sinden bernyanyi di depan layar Good Story Cafe' },
-  penariTertawa: { src: penariTertawa.url, w: 1080, h: 1920, alt: 'Penari Bajidoran tertawa sambil menari' },
-  penariPeace: { src: penariPeace.url, w: 1440, h: 1920, alt: 'Tiga penari berpose peace di depan panggung' },
-  djCrowd: { src: djCrowd.url, w: 1440, h: 1920, alt: 'Penonton berjoget saat DJ tampil' },
-} as const;
-
 /**
- * NEMPO Feed slide 53 (3:4): after-event thank-you. The five event photos crossfade with a slow
- * Ken Burns move, each with its own caption, under a fixed "Hatur Nuhun!" block. Everything is CSS
- * animation on one 15 s loop so the prebuilt MP4 can be recorded by time-stepping the preview.
+ * NEMPO Feed slide 53 (3:4): after-event "Hatur Nuhun!" — text only inside the event's stage frame,
+ * no background, so the PNG is transparent. Static so the download matches the preview.
+ * `checker={false}` hides the preview checkerboard while the PNG is captured.
  */
-export function NempoTerimaKasihSlide({ exportRef }: { exportRef?: RefObject<HTMLElement | null> }) {
-  const { eyebrow, headline, body, closing, title, partner, date, venue, talent, moments } = T;
-  const timing = { '--nte-loop': `${NTE_LOOP_SECONDS}s`, '--nte-step': `${NTE_SECONDS_PER_MOMENT}s` } as CSSProperties;
+export function NempoTerimaKasihSlide({ exportRef, checker = true }: { exportRef?: RefObject<HTMLElement | null>; checker?: boolean }) {
+  const { eyebrow, headline, ribbon, body, closing, title, partner, date, venue, talent } = T;
   return (
     <section
       ref={exportRef as RefObject<HTMLElement>}
-      className="nte-root kmt-root"
-      style={timing}
+      className={`nar-root nte-root kmt-root${checker ? ' nte-root--checker' : ''}`}
       aria-label={`${headline.lead} ${headline.accent} ${body} ${title} & ${partner}, ${date.weekday} ${date.day} ${date.month} ${date.year} di ${venue.name}.`}
     >
-      <div className="nte-photos">
-        {moments.map((m, i) => {
-          const p = PHOTOS[m.photo];
-          return (
-            <span key={m.photo} className={`nte-photo nte-photo--${i}`}>
-              <img src={p.src} alt={p.alt} width={p.w} height={p.h} draggable={false} />
-            </span>
-          );
-        })}
-      </div>
-      <span className="nte-shade" aria-hidden="true" />
+      <img className="nar-frame" src={frameAsset.url} alt="" aria-hidden="true" width={1152} height={1536} draggable={false} />
+      <span className="nar-lamps" aria-hidden="true">
+        {STAGE_LAMPS.map((l, i) => (
+          <span key={i} className={`nar-lamp nar-lamp--${l.tone}`} style={stageLightStyle(l)} />
+        ))}
+      </span>
 
-      <header className="kmt-header nte-header">
+      <header className="kmt-header nar-header nte-header">
         <span className="kmt-brand">
           <span className="kmt-logo"><img src="/nempo-feed/assets/nempo-new.webp" alt="Logo N resmi Nempo" draggable={false} /></span>
           <span className="kmt-name">
@@ -52,26 +37,35 @@ export function NempoTerimaKasihSlide({ exportRef }: { exportRef?: RefObject<HTM
             <span><b>×</b> Kala Muda</span>
           </span>
         </span>
-        <span className="nte-partners">
-          <img className="nte-saduli" src={saduliLogo} alt="Saduli Ragap Entertainment" draggable={false} />
-          <span className="nte-gsc"><img src={gscLogo} alt="Logo Good Story Cafe" draggable={false} /></span>
+        <span className="nar-partners">
+          <img className="nar-saduli" src={saduliLogo} alt="Saduli Ragap Entertainment" draggable={false} />
+          <span className="nar-gsc"><img src={gscLogo} alt="Logo Good Story Cafe" draggable={false} /></span>
         </span>
       </header>
 
-      <div className="nte-bottom">
-        <div className="nte-captions" aria-hidden="true">
-          {moments.map((m, i) => (
-            <span key={m.photo} className="nte-caption" style={{ '--i': i } as CSSProperties}>
-              <span className="nte-dot" />{m.caption}
-            </span>
-          ))}
+      <div className="nte-copy">
+        <p className="nte-kicker">{eyebrow}</p>
+        <h2 className="nte-headline">
+          <span data-text={headline.lead}>{headline.lead}</span>
+          <span data-text={headline.accent}>{headline.accent}</span>
+        </h2>
+
+        <div className="nte-panel">
+          <span className="nte-ribbon"><span className="nte-ribbon-edge"><span className="nte-ribbon-fill">{ribbon}</span></span></span>
+          <p className="nte-body">{body}</p>
         </div>
-        <p className="nte-eyebrow">{eyebrow}</p>
-        <h2 className="nte-headline">{headline.lead} <em>{headline.accent}</em></h2>
-        <p className="nte-body">{body}</p>
+
+        <p className="nte-talent">
+          <span className="nte-pill nte-pill--pink"><span className="nte-pill-icon"><Drama aria-hidden="true" /></span>{talent.dancers}</span>
+          <b className="nte-x" aria-hidden="true">×</b>
+          <span className="nte-pill nte-pill--violet"><span className="nte-pill-icon"><Disc3 aria-hidden="true" /></span>{talent.dj}</span>
+        </p>
+
         <p className="nte-closing">{closing} <span aria-hidden="true">✦</span></p>
-        <p className="nte-meta">
-          {title} &amp; {partner} · {talent.dancers} × {talent.dj} · {date.weekday}, {date.day} {date.month} {date.year}
+
+        <p className="nte-date">
+          <b>{date.weekday}, {date.day} {date.month} {date.year}</b>
+          <span><MapPin aria-hidden="true" />{venue.name}</span>
         </p>
       </div>
     </section>

@@ -1,64 +1,45 @@
-/* NEMPO 53 — after-event "Hatur Nuhun!" photo video (3:4). Tokens live in styles.css (.nte-root). One 15 s loop:
-   photo n fades in over 0.7 s ending at 3n s; photo 0 is the base layer and photo 4 fades out over it at the loop seam. */
-.nte-root.kmt-root { position:relative; isolation:isolate; width:100%; aspect-ratio:3 / 4; overflow:hidden; container-type:inline-size; background:var(--nte-night); color:var(--nte-cream); font-family:'DM Sans',sans-serif; }
-.nte-root * { letter-spacing:0; box-sizing:border-box; }
-.nte-root p,.nte-root h2 { margin:0; padding:0; }
+/* NEMPO 53 — after-event "Hatur Nuhun!" on the event's stage frame, transparent (text only). Stage layers reuse the nar- classes; tokens in styles.css.
+   The compound .nte-root.nar-root selector outspecifies the stage background in NempoAjakRequestSlide.css. */
+.nte-root.nar-root { background:transparent; }
+/* .nar-root p resets padding, so padded paragraphs below are prefixed with .nte-root. */
+.nte-root p,.nte-root h2 { margin:0; }
+/* Preview-only checkerboard so the empty middle reads as see-through; the PNG capture turns it off. */
+.nte-root.nte-root--checker { background-color:var(--nte-check-a); background-image:linear-gradient(45deg,var(--nte-check-b) 25%,transparent 25%,transparent 75%,var(--nte-check-b) 75%),linear-gradient(45deg,var(--nte-check-b) 25%,transparent 25%,transparent 75%,var(--nte-check-b) 75%); background-size:5cqw 5cqw; background-position:0 0,2.5cqw 2.5cqw; }
+/* Static lamps: the download is a still, so nothing blinks in the preview either. */
+.nte-root .nar-lamp { animation:none; opacity:.9; }
 
-.nte-photos { position:absolute; inset:0; }
-.nte-photo { position:absolute; inset:0; overflow:hidden; animation:var(--nte-loop) ease-in-out infinite both; }
-.nte-photo img { display:block; width:100%; height:100%; object-fit:cover; animation:var(--nte-loop) linear infinite both; will-change:transform; }
-.nte-photo--0 { z-index:0; }
-.nte-photo--1 { z-index:1; animation-name:nte-show-1; }
-.nte-photo--2 { z-index:2; animation-name:nte-show-2; }
-.nte-photo--3 { z-index:3; animation-name:nte-show-3; }
-.nte-photo--4 { z-index:4; animation-name:nte-show-4; }
-.nte-photo--0 img { object-position:50% 85%; transform-origin:50% 40%; animation-name:nte-kb-0; }
-.nte-photo--1 img { object-position:50% 50%; transform-origin:45% 42%; animation-name:nte-kb-1; }
-.nte-photo--2 img { object-position:50% 85%; transform-origin:55% 45%; animation-name:nte-kb-2; }
-.nte-photo--3 img { object-position:50% 50%; transform-origin:50% 50%; animation-name:nte-kb-3; }
-.nte-photo--4 img { object-position:50% 50%; transform-origin:50% 45%; animation-name:nte-kb-4; }
+.nte-header { top:8cqw; left:15cqw; right:15cqw; }
+.nte-header .kmt-name { color:var(--nsd-white); text-shadow:var(--nte-soft-shadow); }
 
-@keyframes nte-show-1 { 0%, 15.333% { opacity:0; } 20%, 80% { opacity:1; } 80.2%, 100% { opacity:0; } }
-@keyframes nte-show-2 { 0%, 35.333% { opacity:0; } 40%, 80% { opacity:1; } 80.2%, 100% { opacity:0; } }
-@keyframes nte-show-3 { 0%, 55.333% { opacity:0; } 60%, 80% { opacity:1; } 80.2%, 100% { opacity:0; } }
-@keyframes nte-show-4 { 0%, 75.333% { opacity:0; } 80%, 95.333% { opacity:1; } 100% { opacity:0; } }
+.nte-copy { position:absolute; z-index:8; top:20cqw; left:12cqw; right:12cqw; display:flex; flex-direction:column; align-items:center; text-align:center; }
 
-/* Ken Burns: each photo eases from 1 to 1.08 across the 3.7 s it is on screen (photo 0 wraps the loop seam). */
-@keyframes nte-kb-0 { 0% { transform:scale(1.0151); } 20%, 95.3% { transform:scale(1.08); } 95.333% { transform:scale(1); } 100% { transform:scale(1.0151); } }
-@keyframes nte-kb-1 { 0%, 15.333% { transform:scale(1); } 40%, 100% { transform:scale(1.08); } }
-@keyframes nte-kb-2 { 0%, 35.333% { transform:scale(1.08) translateX(-1.5%); } 60%, 100% { transform:scale(1.08) translateX(1.5%); } }
-/* Photo 3 rides 2.5% higher so the dancers' faces stay above the text block. */
-@keyframes nte-kb-3 { 0%, 55.333% { transform:translateY(-2.5%) scale(1.1); } 80%, 100% { transform:translateY(-2.5%) scale(1.16); } }
-@keyframes nte-kb-4 { 0%, 75.333% { transform:scale(1.08); } 100% { transform:scale(1); } }
+.nte-root .nte-kicker { padding:.8cqw 3.6cqw .9cqw; border-radius:99cqw; background:var(--nsd-red-fill); border:.45cqw solid var(--nsd-gold); box-shadow:var(--nsd-pill-shadow); font-size:2.9cqw; font-weight:800; font-style:italic; line-height:1.1; color:var(--nsd-white); white-space:nowrap; }
 
-.nte-shade { position:absolute; inset:0; z-index:5; pointer-events:none; background:var(--nte-shade); }
+.nte-headline { margin-top:1.6cqw !important; display:flex; flex-direction:column; align-items:center; font-family:'Shrikhand',serif; font-weight:400; font-size:14.2cqw; line-height:.98; color:var(--nar-question-fill); transform:rotate(-3deg); }
+.nte-headline > span { position:relative; white-space:nowrap; -webkit-text-stroke:.55cqw var(--nsd-white); paint-order:stroke fill; text-shadow:var(--nte-headline-extrude); }
+.nte-headline > span + span { color:var(--nte-pink); margin-left:6cqw; }
+/* Dark outline behind the letters so the yellow stays readable over any footage. */
+.nte-headline > span::before { content:attr(data-text); position:absolute; left:0; top:0; z-index:-1; color:transparent; -webkit-text-stroke:1.8cqw var(--nar-question-outline); paint-order:stroke fill; text-shadow:none; }
 
-.nte-header { z-index:7; top:6cqw; left:6cqw; right:6cqw; }
-.nte-partners { display:flex; align-items:center; gap:2.5cqw; }
-.nte-saduli { width:13cqw; height:10cqw; object-fit:contain; }
-.nte-gsc { display:flex; width:8cqw; height:8cqw; padding:.6cqw; border-radius:1cqw; background:var(--nte-cream); overflow:hidden; }
-.nte-gsc img { width:100%; height:100%; object-fit:contain; }
+.nte-panel { position:relative; margin-top:5.6cqw; width:68cqw; padding:5cqw 4cqw 2.8cqw; border-radius:3cqw; background:var(--nar-panel-fill); border:.8cqw solid var(--nsd-gold); box-shadow:var(--nar-panel-shadow); }
+.nte-ribbon { --nte-notch:2.2cqw; --nte-edge:.5cqw; position:absolute; top:-3.8cqw; left:50%; transform:translateX(-50%) rotate(-2deg); display:inline-flex; filter:var(--nsd-ribbon-drop); }
+.nte-ribbon-edge { display:flex; padding:var(--nte-edge); background:var(--nsd-gold-edge); clip-path:polygon(0 0,100% 0,calc(100% - var(--nte-notch)) 50%,100% 100%,0 100%,var(--nte-notch) 50%); }
+.nte-ribbon-fill { position:relative; display:block; padding:1cqw calc(var(--nte-notch) + 3cqw) 1.1cqw; background:var(--nsd-pink-fill); color:var(--nsd-white); font-size:3.3cqw; font-weight:800; line-height:1.2; white-space:nowrap; clip-path:polygon(0 0,100% 0,calc(100% - var(--nte-notch) + var(--nte-edge) * .5) 50%,100% 100%,0 100%,calc(var(--nte-notch) - var(--nte-edge) * .5) 50%); }
+.nte-ribbon-fill::after { content:''; position:absolute; left:0; right:0; top:0; height:48%; background:var(--nsd-shine); pointer-events:none; }
+.nte-body { font-size:3.25cqw; font-weight:700; line-height:1.38; color:var(--nsd-white); text-wrap:balance; }
 
-.nte-bottom { position:absolute; z-index:6; left:6cqw; right:6cqw; bottom:5.6cqw; display:flex; flex-direction:column; align-items:center; text-align:center; text-shadow:var(--nte-text-shadow); }
-.nte-captions { position:relative; width:100%; height:5.8cqw; margin-bottom:2.8cqw; }
-.nte-caption { position:absolute; left:50%; top:0; display:inline-flex; align-items:center; gap:1.4cqw; height:5.8cqw; padding:0 2.6cqw; border-radius:99cqw; background:var(--nte-pill); border:1px solid var(--nte-pill-line); font-size:2.75cqw; font-weight:600; line-height:1; white-space:nowrap; text-shadow:none; opacity:0; transform:translateX(-50%); animation:nte-cap var(--nte-loop) ease-out infinite backwards; animation-delay:calc(var(--i) * var(--nte-step)); }
-.nte-dot { width:1.5cqw; height:1.5cqw; border-radius:50%; background:var(--nte-accent); box-shadow:var(--nte-dot-glow); }
-@keyframes nte-cap {
-  0% { opacity:0; transform:translate(-50%, 1.6cqw); }
-  2.667%, 17.333% { opacity:1; transform:translate(-50%, 0); }
-  20%, 100% { opacity:0; transform:translate(-50%, -1.2cqw); }
-}
+.nte-talent { margin-top:3.4cqw !important; display:flex; align-items:center; justify-content:center; gap:1.4cqw; }
+.nte-pill { display:flex; align-items:center; gap:1.3cqw; padding:.6cqw 2.8cqw .6cqw .6cqw; border-radius:99cqw; border:.45cqw solid var(--nsd-gold); box-shadow:var(--nsd-pill-shadow); font-family:'Shrikhand',serif; font-size:3.1cqw; line-height:1.15; color:var(--nsd-white); white-space:nowrap; }
+.nte-pill--pink { background:var(--nsd-pink-fill); }
+.nte-pill--violet { background:var(--nsd-violet-fill); }
+.nte-pill-icon { display:grid; place-items:center; width:4.8cqw; height:4.8cqw; border-radius:50%; background:var(--nsd-gold-edge); color:var(--nsd-ink-dark); }
+.nte-pill-icon svg { width:3cqw; height:3cqw; stroke-width:2.2; }
+.nte-x { font-size:3.4cqw; font-weight:800; color:var(--nsd-yellow); text-shadow:var(--nte-soft-shadow); }
 
-.nte-eyebrow { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:4.6cqw; line-height:1; color:var(--nte-accent); }
-.nte-headline { margin-top:.6cqw !important; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:14cqw; line-height:.98; white-space:nowrap; }
-.nte-headline em { font-family:'Cormorant Garamond',serif; font-weight:600; font-style:italic; color:var(--nte-accent); }
-.nte-body { margin-top:2cqw !important; max-width:84cqw; font-size:3.2cqw; font-weight:500; line-height:1.38; color:var(--nte-cream); }
-.nte-closing { margin-top:2.2cqw !important; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:4cqw; line-height:1; }
-.nte-closing span { color:var(--nte-accent); font-style:normal; font-size:.8em; }
-.nte-meta { margin-top:2.6cqw !important; padding-top:2.2cqw; border-top:1px solid var(--nte-pill-line); font-size:2.05cqw; font-weight:600; letter-spacing:.06em !important; text-transform:uppercase; white-space:nowrap; color:var(--nte-cream-soft); }
+.nte-closing { margin-top:2.8cqw !important; font-size:2.75cqw; font-weight:800; font-style:italic; line-height:1.2; color:var(--nsd-white); white-space:nowrap; -webkit-text-stroke:.5cqw var(--nar-question-outline); paint-order:stroke fill; text-shadow:var(--nte-soft-shadow); }
+.nte-closing span { color:var(--nsd-yellow); font-style:normal; }
 
-@media (prefers-reduced-motion: reduce) {
-  .nte-photo, .nte-photo img, .nte-caption { animation:none; }
-  .nte-photo--1, .nte-photo--2, .nte-photo--3, .nte-photo--4 { opacity:0; }
-  .nte-caption:first-child { opacity:1; }
-}
+.nte-root .nte-date { margin-top:2.2cqw !important; width:max-content; display:flex; flex-direction:column; align-items:center; gap:.4cqw; padding:1.1cqw 4.6cqw 1.2cqw; border-radius:3.4cqw; background:var(--nsd-blue-fill); border:.55cqw solid var(--nsd-gold); box-shadow:var(--nsd-pill-shadow); line-height:1.1; white-space:nowrap; }
+.nte-date b { font-size:2.7cqw; font-weight:800; color:var(--nsd-white); }
+.nte-date span { display:flex; align-items:center; gap:.7cqw; font-size:2.3cqw; font-weight:700; color:var(--nsd-yellow); }
+.nte-date svg { width:2.5cqw; height:2.5cqw; }

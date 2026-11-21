@@ -263,6 +263,7 @@ import { NEMPO_HARI_INI_SLIDE } from './components/nempo-hari-ini';
 import { NempoHariIniSlide } from './components/NempoHariIniSlide';
 import { NEMPO_TERIMA_KASIH_SLIDE } from './components/nempo-terima-kasih';
 import { NempoTerimaKasihSlide } from './components/NempoTerimaKasihSlide';
+import terimaKasih53Png from '@/assets/nempo-feed-53/nempo-feed-53-hatur-nuhun-transparan.png.asset.json';
 import hariIni52VideoAsset from '@/assets/nempo-feed-52-hari-ini.mp4.asset.json';
 import { NempoBajidoranSawerSlide } from './components/NempoBajidoranSawerSlide';
 import nempoBajidoranReelDownload from '@/assets/nempo-feed-47-bajidoran-reel-download.mp4.asset.json';
@@ -2878,6 +2879,15 @@ function GgsUndanganNailCapture({ exportRef }: { exportRef: RefObject<HTMLElemen
   return <GgsUndanganNailSlide exportRef={exportRef} frame={frame} />;
 }
 
+/** NEMPO slide 53: `?nte=plain` hides the preview checkerboard so the PNG capture stays transparent. */
+function NempoTerimaKasihCapture({ exportRef }: { exportRef: RefObject<HTMLElement | null> }) {
+  const [checker, setChecker] = useState(true);
+  useEffect(() => {
+    setChecker(new URLSearchParams(window.location.search).get('nte') !== 'plain');
+  }, []);
+  return <NempoTerimaKasihSlide exportRef={exportRef} checker={checker} />;
+}
+
 /** Slide 53: `?ggpx=plain` hides the preview checkerboard so the PNG capture stays transparent. */
 function GgsPovScrubCapture({ exportRef }: { exportRef: RefObject<HTMLElement | null> }) {
   const [checker, setChecker] = useState(true);
@@ -4257,6 +4267,19 @@ function App() {
                   Video feed 6 detik · 1080×1440 · lampu panggung bergerak, berulang mulus, persis seperti pratinjau. Di iPad/iPhone pilih “Simpan Video”.
                 </p>
               </>
+            ) : isNempoFeed && activeSlide === NEMPO_TERIMA_KASIH_SLIDE ? (
+              <>
+                <PrebuiltPngDownload
+                  key="nempo-feed-53"
+                  src={terimaKasih53Png.url}
+                  fileName="Nempo-ID-53-Hatur-Nuhun-Transparan.png"
+                  label="Download PNG transparan · 3×"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                />
+                <p className="max-w-[92vw] text-center text-[10px] font-medium text-slate-600">
+                  PNG 3240×4320, teks tajam. Latar belakangnya kosong (kotak-kotak di pratinjau artinya tembus pandang) — tinggal ditumpuk di atas foto atau video acara. Di iPad/iPhone pilih “Simpan Gambar” atau “Simpan ke File”.
+                </p>
+              </>
             ) : isNempoFeed && activeSlide === NEMPO_AJAK_REQUEST_SLIDE ? (
               <>
                 <PrebuiltVideoDownload key="nempo-feed-51" src={ajak51VideoAsset.url} fileName="Nempo-ID-51-Mau-Ajak-Siapa-Request-Lagu.mp4" />
@@ -4483,7 +4506,7 @@ function App() {
         ) : isNempoFeed && activeSlide === NEMPO_HARI_INI_SLIDE ? (
           <NempoHariIniSlide exportRef={exportRef} />
         ) : isNempoFeed && activeSlide === NEMPO_TERIMA_KASIH_SLIDE ? (
-          <NempoTerimaKasihSlide exportRef={exportRef} />
+          <NempoTerimaKasihCapture exportRef={exportRef} />
         ) : isNempoFeed && activeSlide === 49 ? (
           <NempoDjSlide src={dj49VideoAsset.url} poster={dj49PosterAsset.url} exportRef={exportRef} />
         ) : isNempoFeed && activeSlide === NEMPO_BAJIDORAN_SAWER_SLIDE ? (
